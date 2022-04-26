@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="vermelha opacidade" id="vermelha"></div>
+    <div class="amarela opacidade" id="amarela"></div>
+    <div class="verde opacidade" id="verde"></div>
+    <div class="bolina opacidade" id="bolina"></div>
+    <button onclick="verde1()">ligar</button>
+    <button onclick="parar()">parar</button>
+    <button onclick="manutenção()">manutenção</button>
+    <button onclick="pedestre()">pedestre</button>
+
+
+    <script>
+      var idtemporizador = undefined;
+
+      var verde = document.getElementById("verde");
+      var amarelo = document.getElementById("amarela");
+      var vermelho = document.getElementById("vermelha");
+      var bolina = document.getElementById("bolina");
+      /*
+            piscar();
+            function piscar() {
+              var vermelha = document.getElementById("vermelha");
+              vermelha.classList.add("highlight");
+              var flag = true;
+              if (flag) {
+                flag = false;
+                setTimeout(function () {
+                  vermelha.classList.remove("highlight");
+                }, 1000);
+              } else {
+                flag = true;
+                var vermelha = document.getElementById("vermelha");
+                vermelha.classList.add("highlight");
+              }
+            } */
+      /*
+            piscar2();
+            function piscar2() {
+              var amarela = document.getElementById("amarela");
+              amarela.classList.add("highlight3");
+              tempy = 0;
+              tempy++;
+              console.log(tempy);
+              if (tempy > 5) {
+                setTimeout(function () {
+                  amarela.classList.remove("highlight3");
+                }, 1000);
+              }
+            }
+
+            setInterval(function(){
+              var tempg = 0;
+              tempg++;
+              console.log("djhenriqueda penha");
+              flag = true;
+              if (flag) {
+                var verde = document.getElementById("verde");
+                verde.classList.add("highlight2");
+
+                if (tempg > 10) {
+                  var flag = false;
+                  var verde = document.getElementById("verde");
+                  verde.classList.add("highlight5");
+                }
+              }
+              */
+
+              
+              //apagar a luz vermelha
+        // acender a luz verde
+        // temporizar a luz verde com condição de parada
+            //quando atingir a parada 
+                // para o temporizador
+                // chamar a luz amarela
+
+
+      var verde1 = function () {
+        var contador = 0;
+        idtemporizador = setInterval(function(){
+          console.log(contador);
+          contador++;
+          if(contador <=5){
+            vermelho.innerText = contador;
+            bolina.classList.remove('opacidade')
+            if (contador % 2 == 0){
+              bolina.classList.add('opacidade')
+              
+            }
+
+          }
+          if(contador <= 1){
+            vermelho.classList.remove('opacidade');
+            bolina.classList.remove('opacidade');
+            bolina.classList.add("luzv");
+            
+            
+
+            
+            
+            
+          }
+          
+          else if(contador >= 5 && contador <=10){
+            vermelho.classList.add("opacidade");
+            vermelho.innerText = '';
+            if(contador >=5 && contador <=10){
+            verde.innerText = contador-5;
+
+          }
+
+            bolina.classList.remove("luzv");
+            
+            
+
+            console.log('chamar o sem amarelo');
+            verde.classList.remove('opacidade')
+            bolina.classList.add("luzv");
+            
+            
+            
+          }
+          else if(contador >= 10 && contador <=15){
+            bolina.classList.remove("luzv");
+            verde.classList.add('opacidade')
+            amarelo.classList.remove('opacidade')
+            amarelo.innerText = contador-10;
+            verde.innerText = '';
+            bolina.classList.add("luzv");
+            
+
+            
+            
+            
+
+          }
+          else if (contador >= 10 ) {
+            amarelo.classList.add ("opacidade")
+            vermelho.classList.remove('opacidade')
+            amarelo.innerText = '';
+            
+            
+            
+
+            contador=0
+          }
+        }, 1000);
+            
+      };
+
+      function parar() {
+        clearTimeout(idtemporizador)
+        clearInterval(idtemporizador)
+        vermelho.classList.add("opacidade");
+        amarelo.classList.add("opacidade");
+        verde.classList.add("opacidade");
+        contador = 0;
+      }
+
+
+      
+      
+
+
+      function manutenção(){
+        parar()
+        console.log(contador);
+          
+          idtemporizador2 = setInterval (function(){
+          contador++;
+          amarelo.classList.remove("opacidade");
+          console.log(contador)
+          if (contador == 4){
+            amarelo.classList.add("opacidade");
+            contador = 0
+            console.log(contador)
+            if (contador == 1) {
+              parar()
+              clearTimeout(idtemporizador2)
+              clearInterval(idtemporizador2)
+              
+
+            }
+            
+          } 
+
+        },1000)
+        }
+
+
+        function pedestre(){
+        parar()
+        console.log(contador);
+          
+          idtemporizador3 = setInterval (function(){
+          contador++;
+          verde.classList.remove("opacidade");
+          console.log(contador)
+          if (contador == 7){
+            verde.classList.add("opacidade");
+            contador = 0
+            console.log(contador)
+            if (contador == 1) {
+              parar()
+              clearTimeout(idtemporizador3)
+              clearInterval(idtemporizador3)
+              
+
+            }
+            
+          } 
+
+        },1000)
+        }
+      
+      
+      
+      /*var vermelha = document.getElementById("vermelha");
+      vermelha.classList.add("luzfr");
+      var gato = setInterval(function () {
+        console.log("teste gato");
+        vermelha.classList.add("luzr");
+        tempr++;
+        console.log(tempr);
+        if (tempr == 10) {
+          vermelha.classList.remove("luzr");
+          clearInterval(gato);
+        }
+      }, 1000);
+
+      var amarela = document.getElementById("amarela");
+      amarela.classList.add("luzfa");
+      var peixe = setInterval(function () {
+        console.log("teste peixe");
+        amarela.classList.add("luza");
+        tempy++;
+        console.log(tempy);
+        if (tempy == 10) {
+          amarela.classList.remove("luza");
+          clearInterval(peixe);
+        }
+      }, 1000);
+
+       function piscar3() {
+              console.log("djhenriqueda penha");
+              flag = true;
+              if (flag) {
+
+                if (tempg > 10) {
+                  var flag = false;
+                  var verde = document.getElementById("verde");
+                  verde.classList.add("highlight5");
+                }
+              }
+            } */
+    </script>
+  </body>
+</html>

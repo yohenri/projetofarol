@@ -1,0 +1,73 @@
+.amarela{
+    width: 30px;
+    height: 30px;
+    border: solid black;
+    border-radius: 50%;
+    background-color: yellow;
+    
+    
+}
+.vermelha{
+    position: relative;
+  color: red;
+  text-transform: uppercase;
+  transition: 0.5s;
+  
+  cursor: pointer;
+  background-color: red;
+  color: #050801;
+  box-shadow: 0 0 5px red,
+              0 0 25px red,
+              0 0 50px red,
+              0 0 200px red;
+    width: 30px;
+    height: 30px;
+    border: solid black;
+    border-radius: 50%;
+    
+   
+
+}
+.verde{
+    width: 30px;
+    height: 30px;
+    border: solid black;
+    border-radius: 50%;
+    background-color: green;
+    
+
+}
+
+.bolina{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: solid black;
+    border-radius: 50%;
+    left: 230px;
+    bottom: 65px;
+    background-color: gray;
+    
+
+}
+
+
+.opacidade{
+    opacity: 20%;
+}
+
+
+
+.luzr{
+    background-color: red;
+}
+
+
+.luzv{
+    background-color: green;
+}
+
+
+.luza{
+    background-color: yellow;
+}
